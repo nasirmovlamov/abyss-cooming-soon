@@ -1,22 +1,77 @@
 .container {
-  padding: 0 2rem;
+  padding: 0 0;
+  background-color: #1c1e20;
 }
-
+/* 0f1113 */
+/* #ffb742 */
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+}
+.videoBlock{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  background-color: #0f1113;
+  /* padding: 50px 0px; */
+}
+.videoBlock h2{
+  font-size: 56px;
+  margin: 0px;
+  color:#ececec;
+  font-weight: normal;
+  width: 841px;
+
+}
+
+.videoBlock h2 span{
+  color: #ffb742;
+}
+.videoBlock p{
+  font-size: 28px;
+  margin: 0px;
+  color:#949597;
+  font-weight: normal;
+  width: 548px;
+
+}
+.videoBlock form{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+
+}
+.videoBlock form .error 
+{
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  height: 10px;
+  margin-left: 20px;
+}
+
+
+
+.videoBlock form input{
+  
+}
+.videoBlock form button {
+  
+}
+
+.video {
+  background-color: #1c1e20;
 }
 
 .footer {
   display: flex;
   flex: 1;
   padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid #0f1113;
   justify-content: center;
   align-items: center;
 }
@@ -28,23 +83,33 @@
   flex-grow: 1;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.footer p {
+  font-size: 18px;
+  color: #ececec;
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
+.toptitle
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh * 0.236);
 }
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+.toptitle img
+{
+    width: 200px;
+    height: auto;
 }
-
+.toptitle p
+{
+  text-align: center;
+  font-size: 45px;
+  font-weight: bold;
+  margin: 0px;
+  color: #949597;
+}
 .title,
 .description {
   text-align: center;
@@ -104,8 +169,9 @@
 }
 
 .logo {
-  height: 1em;
-  margin-left: 0.5rem;
+  display: flex;
+  margin-left: 10px;
+  column-gap: 10px;
 }
 
 @media (max-width: 600px) {
@@ -113,4 +179,105 @@
     width: 100%;
     flex-direction: column;
   }
+}
+
+
+
+.succesCont{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 3;
+}
+
+
+.succesModal{
+  width: auto;
+  height: auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.succesModal .closeBtn{
+  position: absolute;
+  top:10px;
+  right: 10px;
+  background-color: transparent;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.succesModal h2{
+  text-align: center;
+ 
+}
+
+.succesModal p{
+  font-size: 18px ;
+  color: #1c1e20;
+  text-align: center;
+
+}
+
+.easterTip
+{
+  opacity: 0.1;
+}
+
+.easterBtn{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: gray;
+  padding: 0.5px;
+  border: none;
+  cursor: pointer;
+}
+
+
+.mainLogoSTY{
+  width: 100px;
+  height: 100px;
+}
+
+.inputBox{
+  display: flex;
+  margin-top: 20px;
+}
+.inputBox input{
+  display: flex;
+  width: 244px;
+  height: 50px; 
+  padding: 11px 21px;
+  border: 1px solid #1c1e20;
+  border-radius: 45px 0px 0px 45px;
+  background-color: #0f1113;
+  color: #949597;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.inputBox button{
+  width: 165px;
+  height: 50px;
+  border: none;
+  border-radius: 0px 0px 25px 0px;
+  background-color: #ffb742;
+  padding: 14px 21px;
+  color: #0f1113;
+  font-size: 20px;
+  font-weight: normal;
+  cursor: pointer;
 }
