@@ -42,26 +42,21 @@
 .videoBlock form{
   display: flex;
   flex-direction: column;
-  padding-bottom: 20px;
-
+  align-items: center;
 }
 .videoBlock form .error 
 {
   color: red;
   font-size: 12px;
-  margin-top: 5px;
-  height: 10px;
+  margin-top: 12px;
+  line-height: 12px;
+  height: 12px;
   margin-left: 20px;
+  width: 100%;
+
 }
 
 
-
-.videoBlock form input{
-  
-}
-.videoBlock form button {
-  
-}
 
 .video {
   background-color: #1c1e20;
@@ -254,15 +249,15 @@
 
 .inputBox{
   display: flex;
-  margin-top: 20px;
+  justify-content: center;
 }
 .inputBox input{
   display: flex;
-  width: 244px;
+  width: 294.3px;
   height: 50px; 
   padding: 11px 21px;
   border: 1px solid #1c1e20;
-  border-radius: 45px 0px 0px 45px;
+  border-radius: 10px 0px 0px 10px;
   background-color: #0f1113;
   color: #949597;
   font-size: 20px;
@@ -270,10 +265,10 @@
 }
 
 .inputBox button{
-  width: 165px;
+  width: 182px;
   height: 50px;
   border: none;
-  border-radius: 0px 0px 25px 0px;
+  border-radius: 0px 10px 10px 0px;
   background-color: #ffb742;
   padding: 14px 21px;
   color: #0f1113;

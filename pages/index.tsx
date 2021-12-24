@@ -51,7 +51,7 @@ const HomePage:FC = () => {
       </Head>
 
       {
-        loading === 'failed' && 
+        loading === 'success' && 
         <>
         <div className={styles.succesCont}>
           <Confetti width={window.innerWidth}/>
@@ -86,12 +86,21 @@ const HomePage:FC = () => {
 
             <iframe  className={styles.video} width={initialWidth * 0.5}  height={(initialWidth * 0.5) * (9 / 16)} src="https://www.youtube.com/embed/vtfOsFd99r8" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
             <form onSubmit={handleSubmit} action="">
-              <div className={styles.inputBox}>
+              <div  style={{height:`${height * 0.382 * 0.382 * 0.618}px`, display:'flex' , alignItems:"center", textAlign:'center'}}></div>
+              
+              <div style={{margin:'0px', textAlign:'center', fontSize:'28px', color:"#ececec"}} className={styles.subtitle}>Get informed on future developments</div>
+              
+              <div  style={{height:`14px`, display:'flex'}}></div>
+              
+              <div className={styles.inputBox} > 
                 <input disabled={loading === 'pending'} value={email} onChange={(e:any) => setemail(e.target.value)} type="email"  placeholder='Email address'/>
                 <button disabled={loading === 'pending'}>Send Email</button>
               </div>
+
               <span className={styles.error}>{error}</span>
             </form>
+            <div style={{height:`${(height * 0.382 * 0.382 * 0.618) - 14}px`}}></div>
+
         </div>
       </main>
 

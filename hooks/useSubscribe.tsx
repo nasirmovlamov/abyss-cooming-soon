@@ -20,19 +20,23 @@ export const useSubscribe = () =>  {
     }
 
     const subscribeEmail = async (email: string) => {
-        setemail('')
+        seterror('')
         if (emailRegex.test(email)) {
             try {
-                const response = await axios.post('https://api.abyss.com/subscribe', {email})
+                const response = await axios.post('https://demo.abysshub.com/api/subscribe', {email})
                 setSubscribe(true)
                 setloading('success')
-                setemail('')
             } catch (error:any) {
                 setSubscribe(false)
                 setloading('failed')
-                setemail('')
-                if(error?.response?.data?.message) {
-                    seterror(error.response.data.message)
+                if(error?.response?.data) {
+                    if(error.response.data.errors.email[0]){
+                        seterror(error.response.data.errors.email[0])
+                        return
+                    }
+                    if(error.response.data.errors.message){
+                        seterror(error.response.data.errors.message)
+                    }
                 } else {
                     seterror('Something went wrong , please try again later.')
                 }
