@@ -104,8 +104,8 @@ const HomePage:FC = () => {
           <p>Powered by</p>
           
           <span className={styles.logo}>
-            <Image src="/main-logo-new.svg" alt="Abyss Logo" width={30} height={20} />
-            <Image src="/main-logo-side-text-new.svg" alt="Abyss Logo" width={60} height={40} />
+            <Image src={mainLogo}  alt="Abyss Logo" width={30} height={20} />
+            <Image src={mainLogoText} alt="Abyss Logo" width={50} height={30} />
           </span>
         </a>
       </footer>
