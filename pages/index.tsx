@@ -96,10 +96,8 @@ const HomePage:FC = () => {
       </main>
 
       <footer className={styles.footer}>
-        <a
-        >
+        <a>
           <p>Powered by</p>
-          
           <span className={styles.logo}>
             <Image src={mainLogo}  alt="Abyss Logo" width={30} height={20} />
             <Image src={mainLogoText} alt="Abyss Logo" width={50} height={30} />
