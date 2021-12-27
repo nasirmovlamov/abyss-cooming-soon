@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { FC, Props, useEffect, useLayoutEffect, useState } from 'react'
+import { FC, Props, useContext, useEffect, useLayoutEffect, useState } from 'react'
 import { useSubscribe } from '../hooks/useSubscribe'
 import styles from '../styles/Home.module.css'
 import Confetti from 'react-confetti'
@@ -13,6 +13,8 @@ import {
   useWindowWidth,
   useWindowHeight,
 } from '@react-hook/window-size'
+import { EasterContext } from '../context/EasterContext'
+import { useRouter } from 'next/router'
 
 
 const HomePage:FC = () => {
@@ -23,7 +25,9 @@ const HomePage:FC = () => {
   const randomNumber2Between0and100 = Math.floor(Math.random() * 100)
   const [initialWidth, setinitialWidth] = useState(0)
   const [initialHeight, setinitialHeight] = useState(0)
-  
+  const {seteasterFound} = useContext(EasterContext)
+  const router = useRouter()
+
   useLayoutEffect(() => {
     setinitialWidth(width)
     setinitialHeight(height)
@@ -34,12 +38,19 @@ const HomePage:FC = () => {
     e.preventDefault()
     subscribeEmail(email)
   }
- 
+  const easterFounder = () => {
+    seteasterFound(true)
+    router.push('/register')
+  }
   useEffect(() => {
     if(!inServer){
       document.getElementById('easterBtn')?.setAttribute('style', `top:${randomNumberBetween0and100}px;left:${randomNumber2Between0and100}px;`)
     }
   }, [inServer])
+
+
+
+
 
   if(inServer)return <></>
   return (
@@ -74,7 +85,7 @@ const HomePage:FC = () => {
           <Image src={mainLogoText} alt="Abyss Logo" width={(height * 0.382 * 0.382 * 0.472) * 2.5} height={height * 0.382 * 0.382 * 0.472}/> 
         </div>
 
-        <button className={styles.easterBtn} id={'easterBtn'}> </button>
+        <button onClick={easterFounder} className={styles.easterBtn} id={'easterBtn'}> </button>
         
         <div className={styles.videoBlock}>
           {/* 0.236 , 2 */}
