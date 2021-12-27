@@ -5,7 +5,7 @@ export const EasterContext = createContext<any>(null);
 
 
 export const EasterProvider = ({ children }:any) => {
-    const [easterFound, seteasterFound] = useState(true)
+    const [easterFound, seteasterFound] = useState(false)
    
     return (
         <EasterContext.Provider value={{easterFound , seteasterFound}}>

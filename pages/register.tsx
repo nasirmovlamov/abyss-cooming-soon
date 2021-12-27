@@ -197,7 +197,7 @@ const Register:FC = (props: Props) => {
     else{
 
         return (
-            <></>
+            <div style={{backgroundColor: '#0f1113', width:'100vw', height:"100vh"}}></div>
         )
     }
    
